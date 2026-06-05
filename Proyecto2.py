@@ -8,15 +8,18 @@
 import random
 import time
 import os
-
+# Funciones para limpiar pantalla
 def limpiar():
     os.system("cls" if os.name == "nt" else "clear")
+# Funcion para pausar el juego hasta que el usuario presione ENTER
 def pausa():
     input("\nPresiona ENTER para continuar...")
+#Muestra el titulodel juego
 def mostrar_titulo():
     print("=" * 60)
     print("              JUEGO DE TRIVIA")                          
     print("=" * 60)
+# Muestra reglas del juego
 def mostrar_reglas():
     limpiar()
     mostrar_titulo()
@@ -40,6 +43,7 @@ def mostrar_creditos():
     print("Lenguaje utilizado: Python")
     print("Tema: Juego de Trivia")
     pausa()
+#Muestra categoria de pregunas 
 class Categoria:
     def __init__(self, nombre):
         self.nombre = nombre
@@ -70,6 +74,7 @@ class Pregunta:
             indice = letras.index(respuesta_usuario.upper())
             return self.opciones[indice] == self.respuesta_correcta
         return False
+#Clase que almacena los datos del jugador
 class Jugador:
     def __init__(self, nombre):
         self.nombre = nombre
@@ -96,6 +101,7 @@ class Jugador:
         self.vidas = 3
         self.aciertos = 0
         self.errores = 0
+#Clase que controla las rondas del juego
 class Partida:
     def __init__(self):
         self.rondas = 0
